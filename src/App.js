@@ -75,9 +75,8 @@ function App() {
 
   const handleInputChange = (e) => {
     const newValue = parseFloat(e.target.value);
+    setInputValue(newValue);
     if (!isNaN(newValue) && newValue > 0) {
-      setInputValue(newValue);
-
       const progress =
         animationRef.current.currentTime /
         animationRef.current.effect.getTiming().duration;
@@ -89,9 +88,6 @@ function App() {
     }
   };
 
-  // const handleDotSizeChange = (amount) => {
-  //   setDotSize((prevSize) => Math.max(10, prevSize + amount));
-  // };
   const handleModeChange = (e) => {
     setMode(e.target.value);
   };
