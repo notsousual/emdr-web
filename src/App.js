@@ -74,8 +74,9 @@ function App() {
   };
 
   const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+
     const newValue = parseFloat(e.target.value);
-    setInputValue(newValue);
     if (!isNaN(newValue) && newValue > 0) {
       const progress =
         animationRef.current.currentTime /
@@ -147,13 +148,16 @@ function App() {
               <Tooltip text={controls.speed.tooltip}>
                 <span>{controls.speed.title}</span>
               </Tooltip>
+
               <input
-                type="number"
-                step="0.1"
+                type="text" // use "text" instead of "number" to control the format
+                inputMode="decimal" // helps bring up the numeric keypad on mobile devices
+                pattern="[0-9]*" // this pattern is to ensure iOS brings up the numeric keyboard
                 value={inputValue}
                 onChange={handleInputChange}
                 className="input"
               />
+
               <Tooltip text={controls.speed.tooltip}>
                 <span>{controls.speed.units}</span>
               </Tooltip>
