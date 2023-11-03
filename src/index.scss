@@ -12,13 +12,14 @@ $font-family: "Montserrat", "Futura", -apple-system, BlinkMacSystemFont,
 
 body {
   margin: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   overflow-x: hidden;
   overflow-y: hidden;
   display: flex;
 
   font-family: $font-family;
+  font-display: swap;
 
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
