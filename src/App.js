@@ -74,7 +74,7 @@ function App() {
   };
 
   const handleInputChange = (e) => {
-    const newValue = parseFloat(e.target.value);
+    const newValue = parseFloat(e.target.value.replace(",", "."));
     setInputValue(e.target.value);
     if (!isNaN(newValue) && newValue > 0) {
       const progress =
