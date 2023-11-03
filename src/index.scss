@@ -2,7 +2,7 @@
   font-family: "Montserrat";
   src: url("/fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
     format("truetype");
-  /* Add additional font formats (e.g., woff, woff2) if available */
+
   font-weight: normal;
   font-style: normal;
 }
@@ -13,9 +13,9 @@ $font-family: "Montserrat", "Futura", -apple-system, BlinkMacSystemFont,
 body {
   margin: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
-  // overflow: hidden;
+  overflow: hidden;
 
   display: flex;
 
@@ -39,7 +39,6 @@ body {
       rgb(28, 0, 64)
     ),
     rgb(36, 0, 84);
-  // box-shadow: inset 0 0 200px rgba(232, 255, 59, 0.1);
 
   background-size: 900% 900%;
 
