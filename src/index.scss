@@ -115,15 +115,20 @@ select {
 .button {
   min-width: 30px;
   min-height: 30px;
-  border: none;
-  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+
   background-color: var(--input-bg);
+
   color: white;
   font-size: 20px;
   margin: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
   outline: none;
+  border: none;
+  border-radius: 50%;
+
+  transition: background-color 0.3s;
 
   &:hover {
     background-color: rgba(35, 156, 110, 0.2);
