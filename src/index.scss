@@ -1,0 +1,141 @@
+$font-family: "Futura", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+
+:root {
+  --dot-size: 50px;
+  --font-color: rgb(255, 255, 255);
+  --dot-color: rgb(255, 255, 255);
+  --input-bg: rgba(255, 255, 255, 0.2);
+}
+
+body {
+  margin: 10vw 0;
+  font-family: $font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  width: 100vw;
+  height: 100vh;
+
+  margin: 0;
+  position: relative;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+
+  background-color: rgb(36, 0, 84);
+
+  background: linear-gradient(
+    270deg,
+    rgb(28, 0, 64),
+    rgb(77, 14, 149),
+    rgb(39, 25, 111),
+    rgb(11, 91, 60)
+  );
+  box-shadow: inset 0 0 200px rgba(232, 255, 59, 0.1);
+
+  background-size: 600% 600%;
+
+  animation: bg-animation 30s ease-in-out infinite alternate;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.dot {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: var(--dot-size);
+  height: var(--dot-size);
+
+  will-change: left;
+
+  border-radius: 50%;
+  background: var(--dot-color);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 20px;
+
+  min-height: 50px;
+  margin: 20px 10px;
+
+  border: 1px solid var(--font-color);
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), inset 0 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.label {
+  font-size: 16px;
+  color: var(--font-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+}
+
+.input {
+  width: 50px;
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  background: var(--input-bg);
+  color: var(--font-color);
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+
+  font-family: $font-family;
+}
+
+select {
+  width: auto !important;
+}
+
+.button {
+  min-width: 30px;
+  min-height: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--input-bg);
+  color: white;
+  font-size: 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  outline: none;
+
+  &:hover {
+    background-color: rgba(35, 156, 110, 0.2);
+  }
+}
+
+.collapse-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+
+  svg {
+    fill: white;
+  }
+}
