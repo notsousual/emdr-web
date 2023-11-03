@@ -1,7 +1,7 @@
 .tooltip {
   &-container {
     position: relative;
-    display: inline-block;
+    // display: inline-block;
     cursor: help;
 
     /* Define initial position offsets for the tooltip text */
@@ -27,7 +27,8 @@
   }
 
   &-text {
-    min-width: 200px;
+    // position: fixed;
+    // min-width: 200px;
     margin-top: 10px;
 
     background-color: rgba(0, 0, 0, 0.3);

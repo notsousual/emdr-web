@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import "./index.scss";
+import "./App.scss";
 import Tooltip from "./components/Tooltip";
 
 const controls = {
@@ -96,7 +96,7 @@ function App() {
     setCollapsed((prev) => !prev);
   };
   return (
-    <>
+    <div className="App">
       <div
         className={"dot"}
         ref={dotRef}
@@ -181,7 +181,7 @@ function App() {
           </>
         )}
       </div>
-    </>
+    </div>
   );
 }
 
