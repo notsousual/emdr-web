@@ -74,9 +74,8 @@ function App() {
   };
 
   const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-
     const newValue = parseFloat(e.target.value);
+    setInputValue(e.target.value);
     if (!isNaN(newValue) && newValue > 0) {
       const progress =
         animationRef.current.currentTime /
@@ -97,7 +96,7 @@ function App() {
     setCollapsed((prev) => !prev);
   };
   return (
-    <div className="App">
+    <>
       <div
         className={"dot"}
         ref={dotRef}
@@ -152,7 +151,7 @@ function App() {
               <input
                 type="text" // use "text" instead of "number" to control the format
                 inputMode="decimal" // helps bring up the numeric keypad on mobile devices
-                pattern="[0-9]*" // this pattern is to ensure iOS brings up the numeric keyboard
+                pattern="[0-9]*|[0-9]*[.,]?[0-9]*" // this pattern is to ensure iOS brings up the numeric keyboard
                 value={inputValue}
                 onChange={handleInputChange}
                 className="input"
@@ -185,7 +184,7 @@ function App() {
           </>
         )}
       </div>
-    </div>
+    </>
   );
 }
 

@@ -17,37 +17,36 @@ $font-family: "Montserrat", "Futura", -apple-system, BlinkMacSystemFont,
   --input-bg: rgba(255, 255, 255, 0.2);
 }
 
-// .Appss {
-//   font-family: $font-family;
-//   // -webkit-font-smoothing: antialiased;
-//   // -moz-osx-font-smoothing: grayscale;
+.App {
+  // font-family: $font-family;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
 
-//   width: 100%;
-//   height: 100vh;
+  // height: 100vh;
 
-//   margin: 0;
-//   padding: 0;
-//   position: relative;
-//   color: white;
+  // margin: 0;
+  // padding: 0;
+  // position: relative;
+  // color: white;
 
-//   display: flex;
-//   justify-content: center;
+  // display: flex;
+  // justify-content: center;
 
-//   background-color: rgb(36, 0, 84);
+  // background-color: rgb(36, 0, 84);
 
-//   background: linear-gradient(
-//     270deg,
-//     rgb(28, 0, 64),
-//     rgb(77, 14, 149),
-//     rgb(39, 25, 111),
-//     rgb(11, 91, 60)
-//   );
-//   box-shadow: inset 0 0 200px rgba(232, 255, 59, 0.1);
+  // background: linear-gradient(
+  //   270deg,
+  //   rgb(28, 0, 64),
+  //   rgb(77, 14, 149),
+  //   rgb(39, 25, 111),
+  //   rgb(11, 91, 60)
+  // );
+  // box-shadow: inset 0 0 200px rgba(232, 255, 59, 0.1);
 
-//   background-size: 600% 600%;
+  // background-size: 600% 600%;
 
-//   animation: bg-animation 30s ease-in-out infinite alternate;
-// }
+  // animation: bg-animation 30s ease-in-out infinite alternate;
+}
 
 .dot {
   position: absolute;
