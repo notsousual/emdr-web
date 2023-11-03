@@ -41,15 +41,6 @@ $font-family: "Futura", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
 //   animation: bg-animation 30s ease-in-out infinite alternate;
 // }
 
-@keyframes bg-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
 .dot {
   position: absolute;
   left: 0;
