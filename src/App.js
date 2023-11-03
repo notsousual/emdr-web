@@ -173,7 +173,7 @@ function App() {
                     onClick={() => handleDotSizeChange(-10)}
                     className="button"
                   >
-                    -
+                    –
                   </button>
                 </span>
               </p>
