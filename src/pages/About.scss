@@ -1,0 +1,114 @@
+.About {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
+  padding: 20px;
+  background: rgba(255, 255, 255, 1);
+  color: black;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+:root {
+  --nav-height: 200px;
+}
+
+.introduction {
+  min-height: calc(
+    100vh - var(--nav-height) - 20px
+  ); // 20px are coming from .About top padding
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+
+  flex-wrap: wrap;
+  max-width: 1000px;
+
+  .eyes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 460px) {
+      transform: scale(0.7);
+      width: calc(470px * 0.5); // 270px is .eyes' width
+    }
+
+    .eye {
+      position: relative;
+      &-left {
+        mask: url("./../assets/left_eye_mask.svg");
+        margin-right: 50px;
+      }
+
+      &-right {
+        mask: url("./../assets/right_eye_mask.svg");
+      }
+
+      &-svg {
+        position: relative;
+      }
+
+      .pupil {
+        position: absolute;
+        left: 0;
+
+        animation: move 0.5s ease-in-out infinite alternate;
+        animation-play-state: paused;
+        animation-delay: calc(var(--scroll) * -2s);
+      }
+    }
+  }
+
+  .paragraph {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+    min-width: 200px;
+
+    text-align: justify;
+  }
+}
+
+.navigation {
+  padding: 20px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0;
+}
+
+.content {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.disclaimer {
+  padding: 20px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.5); /* Change the color and width as needed */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5); /* Change the color and width as needed */
+}
+
+@keyframes move {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(80%);
+  }
+}
