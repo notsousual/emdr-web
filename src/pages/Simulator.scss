@@ -43,6 +43,8 @@ $font-family: "Montserrat", "Futura", -apple-system, BlinkMacSystemFont,
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+
+  position: relative;
 }
 
 @keyframes bg-animation {
@@ -70,6 +72,14 @@ $font-family: "Montserrat", "Futura", -apple-system, BlinkMacSystemFont,
 }
 
 .controls {
+  position: absolute;
+  margin: 20px;
+
+  margin-left: max(20px, env(safe-area-inset-left));
+  margin-top: max(20px, env(safe-area-inset-top));
+
+  left: 0;
+  top: 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -79,7 +89,6 @@ $font-family: "Montserrat", "Futura", -apple-system, BlinkMacSystemFont,
   gap: 20px;
 
   min-height: 50px;
-  margin: 20px;
 
   border: 1px solid var(--font-color);
   padding: 10px 20px;
