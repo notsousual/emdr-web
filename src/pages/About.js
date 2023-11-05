@@ -4,7 +4,6 @@ import SectionLink from "../components/SectionLink";
 import { ReactComponent as LeftEye } from "../assets/left_eye.svg";
 import { ReactComponent as RightEye } from "../assets/right_eye.svg";
 import { ReactComponent as Pupil } from "../assets/pupil.svg";
-import { ReactComponent as ProjectIcon } from "../assets/project_icon.svg";
 
 import "./About.scss";
 
