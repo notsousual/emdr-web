@@ -48,15 +48,11 @@
     background-size: 600% 600%;
 
     animation: bg-animation 3s ease-in-out infinite alternate;
-    // &:hover {
-    //   color: rgb(0, 0, 0);
-    //   // border: 1px solid #000000;
-    //   background: none;
-    //   animation: none;
-    // }
   }
 
-  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out,
+  transition:
+    box-shadow 0.3s ease-in-out,
+    background-color 0.3s ease-in-out,
     border 0.3s ease-in-out;
 
   &:hover {

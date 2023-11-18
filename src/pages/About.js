@@ -1,9 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SectionLink from "../components/SectionLink";
 import { ReactComponent as LeftEye } from "../assets/left_eye.svg";
 import { ReactComponent as RightEye } from "../assets/right_eye.svg";
 import { ReactComponent as Pupil } from "../assets/pupil.svg";
+
+import girl from "../assets/girl_color.png";
+import mountainsLeft from "../assets/left_color.png";
+import mountainsRight from "../assets/right_color.png";
 
 import "./About.scss";
 
@@ -22,6 +26,7 @@ function About() {
   }, [location]);
 
   useEffect(() => {
+    //scroll animation for eyes
     const handleScroll = () => {
       const newScroll =
         window.scrollY / (document.body.offsetHeight - window.innerHeight);
@@ -60,6 +65,7 @@ function About() {
     // Clean up the observer on component unmount
     return () => resizeObserver.disconnect();
   }, []); // Empty dependency array ensures this effect runs once on mount
+
   return (
     <div className="About">
       <div
@@ -100,24 +106,24 @@ function About() {
       </div>
 
       <div className="content">
-        <div id="what_is_emdr">
-          <h2>– Wait, what the heck is EMDR? Is it evidence-based?</h2>
+        <div id="what_is_emdr" className="content__block">
+          <h1>– Wait, what the heck is EMDR? Is it evidence-based?</h1>
           <p>
             <b>Eye Movement Desensitization and Reprocessing</b> (EMDR) is a
             scientifically validated psychotherapy type that helps to manage
             anxiety and trauma by enabling a unique state of mind that
-            facilitates the reprocessing of memories. This "reprocessing" allows
-            individuals to re-evaluate or rethink how a memory affects them
-            emotionally. It's achieved through specific eye movements or other
-            forms of rhythmic, left-right (bilateral) stimulation that aids in
-            processing memories, triggers, and painful emotions associated with
-            trauma or other distressing conditions​​.
+            facilitates the reprocessing of memories. <br />
+            This "reprocessing" allows individuals to re-evaluate or rethink how
+            a memory affects them emotionally. It's achieved through specific
+            eye movements or other forms of rhythmic, left-right (bilateral)
+            stimulation that aids in processing memories, triggers, and painful
+            emotions associated with trauma or other distressing conditions​​.
             <br />
             <br /> These movements are akin to the memory processing that occurs
             during the Rapid Eye Movement (REM) phase of sleep, crucial for
-            memory integration​1​. The lateral eye movements in EMDR are
-            believed to foster distraction, relaxation, and synchronization of
-            the brain's two hemispheres, enhancing the processing of traumatic
+            memory integration​​. The lateral eye movements in EMDR are believed
+            to foster distraction, relaxation, and synchronization of the
+            brain's two hemispheres, enhancing the processing of traumatic
             memories and aiding in coping with anxiety and PTSD effectively​​.{" "}
             <br />
             <br />
@@ -125,36 +131,113 @@ function About() {
             ultimately reducing or eliminating the problematic symptoms​.
           </p>
         </div>
-        <div id="how_to_use">
-          <h2>– How can I use this tool?</h2>
+        <div id="how_to_use" className="content__block">
+          <h1>– How can I use this tool?</h1>
           <p>
             The eye movement and bilateral tapping/movement helpers within this
             tool can be employed during a panic attack, anxiety episode, or when
             a troubling memory surfaces, aiding in calming the nervous system
-            and promoting emotional healing. The platform also offers guides on
-            performing these techniques.
+            and promoting emotional healing.
             <br />
-            <br /> The tool website is adapted for both desktop and mobile
-            usage.
-            <br />
+            <br /> The tool website is adapted for both desktop and mobile usage
+            (Chrome, Safari browsers).
             <br />
             <b>
-              This tool can be used for conducting remote (EMDR) therapy
-              sessions as well!
+              It can be used for conducting remote (EMDR) therapy sessions as
+              well! <br />
+              <br />
             </b>
+          </p>
+
+          <h1 className="how-to__follow">Simply: Follow. The. Dot. </h1>
+          <h2 className="how-to__follow__subtitle">until you feel better</h2>
+
+          <div className="how-to__showcase">
+            <div className="dot" />
+          </div>
+
+          <p className="how-to__speed">
+            The standard speed of the dot is set for 1 Hz by default = 1 cycle
+            (from left - to right - back to left side of the screen). <br />{" "}
+            Generally, the recommended speed falls between 1 and 2 Hz.
+            <br />
+          </p>
+          <p className="how-to__speed">
+            <b>PRO TIP:</b> Find a quite and safe environment; if you have a
+            monitor - take advantage of a good posture.
           </p>
         </div>
 
-        <p id="disclaimer" className="disclaimer">
-          <b>Disclaimer: </b>The information provided about EMDR is for
-          educational purposes. It's crucial to conduct your own research and
-          possibly consult with a professional therapist before engaging in
-          self-administered EMDR, especially if dealing with severe trauma or
-          PTSD.
-        </p>
+        <div id="disclaimer" className="content__block">
+          <p className={"disclaimer"}>
+            <b>Disclaimer: </b>The information provided about EMDR is for
+            educational purposes. It's crucial to conduct your own research and
+            possibly consult with a professional therapist before engaging in
+            self-administered EMDR, especially if dealing with severe trauma or
+            PTSD.
+          </p>
+        </div>
+      </div>
+
+      <div className="art-composition">
+        <img
+          className="art-composition__center"
+          alt="girl walking"
+          src={girl}
+        />
+        <img
+          className="art-composition__left"
+          alt="mountains"
+          src={mountainsLeft}
+        />
+
+        <img
+          className="art-composition__right"
+          alt="mountains"
+          src={mountainsRight}
+        />
+      </div>
+
+      <div className="content">
+        <div className="created-by">
+          <h1 className="created-by__text">
+            From my journey of healing, I hope to delineate a path of
+            tranquility for people grappling with anxiety and trauma.
+            <br /> <br />
+            Support the free tool and share it with others who may need it.
+          </h1>
+          <p className="created-by__signature">
+            – Alisa, the developer of the tool
+          </p>
+          <div className="created-by__links">
+            <Link to="https://www.github.com/notsousual">github</Link>
+            <Link to="https://www.linkedin.com/in/alisa-zakhtarenko-641604182/l">
+              linkedIn
+            </Link>
+          </div>
+          <p className="gratitude">
+            <b>Special thanks to:</b> <br />
+            Anastasiia Rogozhkina for manual testing of the tool <br />
+            Janna Akimova, Fedor Fedorchuk for feedback and moral support
+            <br />
+            code sisters community members - for everything :) <br />
+          </p>
+        </div>
       </div>
     </div>
   );
 }
 
 export default About;
+
+// TODO: to implement
+
+//font loader
+// const [fontsLoaded, setFontsLoaded] = useState(false);
+
+// useEffect(() => {
+//   // Check if all fonts have been loaded
+//   document.fonts.ready.then(() => {
+//     setFontsLoaded(true); // Set to true only when fonts are loaded
+//   });
+// }, []);

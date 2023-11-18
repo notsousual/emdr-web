@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Simulator.scss";
 import Tooltip from "./../components/Tooltip";
+import { Link } from "react-router-dom";
 
 const controls = {
   speed: {
@@ -18,6 +19,11 @@ const controls = {
   },
 
   dotSize: "Dot size: ",
+
+  help: {
+    tooltip:
+      "Learn more about what this tool does and EMDR therapy by clicking on the question mark button!",
+  },
 };
 
 function Simulator() {
@@ -26,7 +32,6 @@ function Simulator() {
   const [inputValue, setInputValue] = useState(1);
   const dotRef = useRef(null);
   const animationRef = useRef(null);
-  const [mode, setMode] = useState(controls.mode.eyeMovement);
 
   const [collapsed, setCollapsed] = useState(false);
 
@@ -88,10 +93,6 @@ function Simulator() {
     }
   };
 
-  const handleModeChange = (e) => {
-    setMode(e.target.value);
-  };
-
   const toggleCollapse = () => {
     setCollapsed((prev) => !prev);
   };
@@ -102,90 +103,108 @@ function Simulator() {
         ref={dotRef}
         style={{ "--dot-size": `${dotSize}px` }}
       ></div>
+
       <div className="controls">
-        <button className="collapse-btn" onClick={toggleCollapse}>
-          {collapsed ? (
-            // menu SVG
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24"
-              viewBox="0 -960 960 960"
-              width="24"
-            >
-              <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-            </svg>
-          ) : (
-            // Cross SVG
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24"
-              viewBox="0 -960 960 960"
-              width="24"
-            >
-              <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
-            </svg>
-          )}
-        </button>
-
-        {!collapsed && (
-          <>
-            <label className="label">
-              {controls.mode.title}
-              <select
-                value={mode}
-                onChange={handleModeChange}
-                className="input"
+        <div className="controls__panel">
+          <button className="collapse-btn" onClick={toggleCollapse}>
+            {collapsed ? (
+              // menu SVG
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                viewBox="0 -960 960 960"
+                width="24"
               >
-                {Object.entries(controls.mode.options).map(([key, value]) => (
-                  <option key={key} value={key}>
-                    {value}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label className="label">
-              <Tooltip text={controls.speed.tooltip}>
-                <span>{controls.speed.title}</span>
-              </Tooltip>
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+              </svg>
+            ) : (
+              // Cross SVG
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                viewBox="0 -960 960 960"
+                width="24"
+              >
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+              </svg>
+            )}
+          </button>
 
-              <input
-                type="text" // use "text" instead of "number" to control the format
-                inputMode="decimal" // helps bring up the numeric keypad on mobile devices
-                pattern="[0-9]*|[0-9]*[.,]?[0-9]*" // this pattern is to ensure iOS brings up the numeric keyboard
-                value={inputValue}
-                onChange={handleInputChange}
-                className="input"
-              />
-
-              <Tooltip text={controls.speed.tooltip}>
-                <span>{controls.speed.units}</span>
-              </Tooltip>
-            </label>
-
+          {!collapsed && (
             <>
-              <p className="label">
-                {controls.dotSize}
-                <span>
-                  <button
-                    onClick={() => handleDotSizeChange(10)}
-                    className="button"
-                  >
-                    +
-                  </button>
-                  <button
-                    onClick={() => handleDotSizeChange(-10)}
-                    className="button"
-                  >
-                    –
-                  </button>
-                </span>
-              </p>
+              <label className="label">
+                <Tooltip text={controls.speed.tooltip}>
+                  <span>{controls.speed.title}</span>
+                </Tooltip>
+
+                <input
+                  type="text" // use "text" instead of "number" to control the format
+                  inputMode="decimal" // helps bring up the numeric keypad on mobile devices
+                  pattern="[0-9]*|[0-9]*[.,]?[0-9]*" // this pattern is to ensure iOS brings up the numeric keyboard
+                  value={inputValue}
+                  onChange={handleInputChange}
+                  className="input"
+                />
+
+                <Tooltip text={controls.speed.tooltip}>
+                  <span>{controls.speed.units}</span>
+                </Tooltip>
+              </label>
+
+              <>
+                <p className="label">
+                  {controls.dotSize}
+                  <span>
+                    <button
+                      onClick={() => handleDotSizeChange(10)}
+                      className="button"
+                    >
+                      +
+                    </button>
+                    <button
+                      onClick={() => handleDotSizeChange(-10)}
+                      className="button"
+                    >
+                      –
+                    </button>
+                  </span>
+                </p>
+              </>
             </>
-          </>
-        )}
+          )}
+        </div>
+
+        <Tooltip text={controls.help.tooltip}>
+          <Link to={"/about"} className="info-link">
+            ?
+          </Link>
+        </Tooltip>
       </div>
     </div>
   );
 }
 
 export default Simulator;
+
+// TODO mode change
+
+// const [mode, setMode] = useState(controls.mode.eyeMovement);
+
+// const handleModeChange = (e) => {
+//   setMode(e.target.value);
+// };
+
+/* <label className="label">
+                {controls.mode.title}
+                <select
+                  value={mode}
+                  onChange={handleModeChange}
+                  className="input"
+                >
+                  {Object.entries(controls.mode.options).map(([key, value]) => (
+                    <option key={key} value={key}>
+                      {value}
+                    </option>
+                  ))}
+                </select>
+              </label> */

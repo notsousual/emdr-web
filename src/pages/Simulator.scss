@@ -6,9 +6,20 @@
   font-weight: normal;
   font-style: normal;
 }
-$font-family: "Montserrat", "Futura", -apple-system, BlinkMacSystemFont,
-  "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-  "Droid Sans", "Helvetica Neue", sans-serif;
+$font-family:
+  "Montserrat",
+  "Futura",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  "Roboto",
+  "Oxygen",
+  "Ubuntu",
+  "Cantarell",
+  "Fira Sans",
+  "Droid Sans",
+  "Helvetica Neue",
+  sans-serif;
 
 :root {
   --dot-size: 50px;
@@ -18,6 +29,11 @@ $font-family: "Montserrat", "Futura", -apple-system, BlinkMacSystemFont,
 }
 
 .Simulator {
+  --dot-size: 50px;
+  --font-color: rgb(255, 255, 255);
+  --dot-color: rgb(255, 255, 255);
+  --input-bg: rgba(255, 255, 255, 0.2);
+
   width: 100%;
   height: 100vh;
 
@@ -73,27 +89,36 @@ $font-family: "Montserrat", "Futura", -apple-system, BlinkMacSystemFont,
 
 .controls {
   position: absolute;
-  margin: 20px;
-
-  margin-left: max(20px, env(safe-area-inset-left));
-  margin-top: max(20px, env(safe-area-inset-top));
 
   left: 0;
   top: 0;
+  margin: 20px;
+  margin-left: max(20px, env(safe-area-inset-left));
+  margin-top: max(20px, env(safe-area-inset-top));
+
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
-  flex-wrap: wrap;
-
   gap: 20px;
 
-  min-height: 50px;
+  &__panel {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 
-  border: 1px solid var(--font-color);
-  padding: 10px 20px;
-  border-radius: 20px;
-  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), inset 0 0px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    min-height: 50px;
+
+    border: 1px solid var(--font-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow:
+      0 0px 10px rgba(0, 0, 0, 0.1),
+      inset 0 0px 10px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .label {
@@ -134,9 +159,13 @@ select {
   max-width: 40px;
   max-height: 40px;
 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   background-color: var(--input-bg);
 
-  color: white;
+  color: var(--font-color);
   font-family: $font-family;
   font-size: 20px;
   font-weight: bold;
@@ -164,8 +193,20 @@ select {
   padding: 0;
 
   svg {
-    fill: white;
+    fill: var(--font-color);
     width: 24px;
     height: 24px;
   }
+}
+
+.info-link {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+
+  color: var(--font-color);
+  font-family: $font-family;
+  font-size: 24px;
+
+  text-decoration: none;
 }
