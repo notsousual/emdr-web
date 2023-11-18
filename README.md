@@ -1,12 +1,43 @@
+# Self-administered EMDR Therapy Web Application
 
+This React-based web application offers accessible mental health resources by incorporating EMDR (Eye Movement Desensitization and Reprocessing) therapy techniques to manage anxiety, trauma responses, and calm the nervous system through self-administered exercises.
 
+Explore the live application: [Self-administered EMDR Therapy Web Application](http://online-emdr.netlify.app/) / [ABOUT THE PROJECT](http://online-emdr.netlify.app/about)
 
+## Features
 
+- **Interactive EMDR Tool**: A visual aid that simulates the eye movement technique used in EMDR therapy.
+- **Customizable Animation Control**: Users can adjust the frequency of the eye movement simulation measured in Hertz (Hz), which denotes the number of cycles per second.The size of the moving dot can be dynamically adjusted to suit user preferences, enhancing the visual aspect of the EMDR therapy simulation.
+- **Advanced Animation**: Utilizes the `animate()` method and `Web Animations API` to create a smooth and continuous back-and-forth movement of the 'therapy' dot.
+- **Responsive Interaction**: A collapsible control panel allows for a cleaner user interface while maintaining functionality.
+- **Accessibility**: Input fields are designed to be mobile-friendly and accessible, with `inputMode`, `pattern`, and `Tooltip` components for better user guidance.
+- **Artistic Elements**: Includes engaging illustrations and designs that contribute to a calming user experience.
+- **Responsive Design**: Fully functional across Chrome and Safari browsers on desktop and mobile devices.
+- **Educational Resources**: Provides information about EMDR, its effectiveness, and its use.
 
+## Built With
 
+- React.js
+- Web Animations API
+- SVG for animations
+- SCSS for advanced styling
+- Responsive design methodologies
 
+- **Customizable Speed Control**: Users can adjust the frequency of the eye movement simulation
 
----------------------------------------------------------
+## Project Structure
+
+- `Eyes Animation`: React components for interactive eye animations.
+- `Navigation and Content`: Sections with detailed information on EMDR.
+- `Art Composition`: Artistic images to enhance user engagement.
+- `Acknowledgments`: Credits to contributors and supporters.
+
+## Upcoming Features
+
+- **Font Loader**: To ensure text is rendered after the custom fonts are loaded
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
