@@ -140,7 +140,7 @@ function About() {
             and promoting emotional healing.
             <br />
             <br /> The tool website is adapted for both desktop and mobile usage
-            (Chrome, Safari browsers).
+            only for <b>Chrome and Safari.</b>
             <br />
             <b>
               It can be used for conducting remote (EMDR) therapy sessions as
@@ -157,6 +157,9 @@ function About() {
           </div>
 
           <p className="how-to__speed">
+            <b> Flip your phone horizontally!</b>
+            <br />
+            <br />
             The standard speed of the dot is set for 1 Hz by default = 1 cycle
             (from left - to right - back to left side of the screen). <br />{" "}
             Generally, the recommended speed falls between 1 and 2 Hz.
