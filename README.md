@@ -10,7 +10,6 @@ Explore the live application: [Self-administered EMDR Therapy Web Application](h
 - **Customizable Animation Control**: Users can adjust the frequency of the eye movement simulation measured in Hertz (Hz), which denotes the number of cycles per second.The size of the moving dot can be dynamically adjusted to suit user preferences, enhancing the visual aspect of the EMDR therapy simulation.
 - **Advanced Animation**: Utilizes the `animate()` method and `Web Animations API` to create a smooth and continuous back-and-forth movement of the 'therapy' dot.
 - **Responsive Interaction**: A collapsible control panel allows for a cleaner user interface while maintaining functionality.
-- **Accessibility**: Input fields are designed to be mobile-friendly and accessible, with `inputMode`, `pattern`, and `Tooltip` components for better user guidance.
 - **Artistic Elements**: Includes engaging illustrations and designs that contribute to a calming user experience.
 - **Responsive Design**: Fully functional across Chrome and Safari browsers on desktop and mobile devices.
 - **Educational Resources**: Provides information about EMDR, its effectiveness, and its use.
