@@ -203,15 +203,15 @@ function About() {
 
       <div className="content">
         <div className="created-by">
-          <h1 className="created-by__text">
+          <h2 className="created-by__text">
             From my journey of healing, I hope to delineate a path of
             tranquility for people grappling with anxiety and trauma.
-            <br /> <br />
+            <br />
             Support the free tool and share it with others who may need it.
-          </h1>
-          <p className="created-by__signature">
+          </h2>
+          <h3 className="created-by__signature">
             – Alisa, the developer of the tool
-          </p>
+          </h3>
           <div className="created-by__links">
             <Link to="https://www.github.com/notsousual">github</Link>
             <Link to="https://www.linkedin.com/in/alisa-zakhtarenko-641604182/l">
