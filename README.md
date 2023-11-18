@@ -23,17 +23,10 @@ Explore the live application: [Self-administered EMDR Therapy Web Application](h
 - SCSS for advanced styling
 - Responsive design methodologies
 
-- **Customizable Speed Control**: Users can adjust the frequency of the eye movement simulation
-
-## Project Structure
-
-- `Eyes Animation`: React components for interactive eye animations.
-- `Navigation and Content`: Sections with detailed information on EMDR.
-- `Art Composition`: Artistic images to enhance user engagement.
-- `Acknowledgments`: Credits to contributors and supporters.
-
 ## Upcoming Features
 
+- **Bilateral tapping guide**: another EMDR technique coming soon
+- **Remote, session-based control of the animation**: for use in actual therapy sesssions for both clent and therapist
 - **Font Loader**: To ensure text is rendered after the custom fonts are loaded
 
 ---
