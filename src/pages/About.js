@@ -116,31 +116,28 @@ function About() {
             This "reprocessing" allows individuals to re-evaluate or rethink how
             a memory affects them emotionally. It's achieved through specific
             eye movements or other forms of rhythmic, left-right (bilateral)
-            stimulation that aids in processing memories, triggers, and painful
-            emotions associated with trauma or other distressing conditions​​.
+            stimulation that aids in processing triggers and painful emotions
+            associated with distressing memories​​.
             <br />
             <br /> These movements are akin to the memory processing that occurs
             during the Rapid Eye Movement (REM) phase of sleep, crucial for
             memory integration​​. The lateral eye movements in EMDR are believed
-            to foster distraction, relaxation, and synchronization of the
-            brain's two hemispheres, enhancing the processing of traumatic
-            memories and aiding in coping with anxiety and PTSD effectively​​.{" "}
+            to foster distraction, and synchronization of the brain's two
+            hemispheres, enhancing the processing of traumatic memories​​.{" "}
             <br />
             <br />
-            EMDR changes how the memories are stored and processed in the brain,
-            ultimately reducing or eliminating the problematic symptoms​.
           </p>
         </div>
         <div id="how_to_use" className="content__block">
           <h1>– How can I use this tool?</h1>
           <p>
-            The eye movement and bilateral tapping/movement helpers within this
-            tool can be employed during a panic attack, anxiety episode, or when
-            a troubling memory surfaces, aiding in calming the nervous system
-            and promoting emotional healing.
+            The eye movement and bilateral tapping helpers within this tool can
+            be employed during an anxiety episode or when a troubling memory
+            surfaces, aiding in calming the nervous system and promoting
+            emotional healing.
             <br />
-            <br /> The tool website is adapted for both desktop and mobile usage
-            only for <b>Chrome and Safari.</b>
+            <br /> The tool is adapted for both desktop and mobile usage only
+            for <b>Chrome and Safari.</b>
             <br />
             <b>
               It can be used for conducting remote (EMDR) therapy sessions as
@@ -169,6 +166,10 @@ function About() {
             <b>PRO TIP:</b> Find a quite and safe environment; if you have a
             monitor - take advantage of a good posture.
           </p>
+
+          <SectionLink to="/" variation="hyperlink">
+            &#8594; THE TOOL &#8592;
+          </SectionLink>
         </div>
 
         <div id="disclaimer" className="content__block">
