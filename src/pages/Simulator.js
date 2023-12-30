@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "./Simulator.scss";
 import Tooltip from "./../components/Tooltip";
 import { Link } from "react-router-dom";
+import classNames from "classnames";
 
 const controls = {
   speed: {
@@ -24,6 +25,25 @@ const controls = {
     tooltip:
       "Learn more about what this tool does and EMDR therapy by clicking on the question mark button!",
   },
+
+  theme: {
+    label: "Theme: ",
+    themes: {
+      movingGradient: {
+        bg: "linear-gradient(270deg, rgb(28, 0, 64),rgb(77, 14, 149),rgb(39, 25, 111), rgb(11, 91, 60), rgb(39, 25, 111), rgb(77, 14, 149), rgb(28, 0, 64)), rgb(36, 0, 84)",
+        label: "Moving gradient",
+      },
+
+      blackAndWhite: {
+        bg: "rgb(30,30,30)",
+        label: "Black and white",
+      },
+      blue: {
+        bg: "#246bb4",
+        label: "Blue",
+      },
+    },
+  },
 };
 
 function Simulator() {
@@ -34,6 +54,9 @@ function Simulator() {
   const animationRef = useRef(null);
 
   const [collapsed, setCollapsed] = useState(false);
+  const [themeKey, setThemeKey] = useState("movingGradient");
+  // Get the current theme object using the theme key
+  const currentTheme = controls.theme.themes[themeKey];
 
   useEffect(() => {
     const element = dotRef.current;
@@ -96,13 +119,28 @@ function Simulator() {
   const toggleCollapse = () => {
     setCollapsed((prev) => !prev);
   };
+
+  const handleThemeChange = (e) => {
+    // Update the theme key state with the selected theme key
+    setThemeKey(e.target.value);
+  };
+
   return (
-    <div className="Simulator">
+    <div
+      className={classNames(
+        "Simulator",
+        controls.theme.themes[themeKey] ===
+          controls.theme.themes.movingGradient && "bg-animated"
+      )}
+      style={{
+        "--bg": currentTheme.bg,
+      }}
+    >
       <div
         className={"dot"}
         ref={dotRef}
         style={{ "--dot-size": `${dotSize}px` }}
-      ></div>
+      />
 
       <div className="controls">
         <div className="controls__panel">
@@ -170,6 +208,21 @@ function Simulator() {
                   </span>
                 </p>
               </>
+
+              <p className="label">
+                {controls.theme.label}
+                <select
+                  value={themeKey}
+                  onChange={handleThemeChange}
+                  className="input"
+                >
+                  {Object.entries(controls.theme.themes).map(([key, value]) => (
+                    <option key={key} value={key}>
+                      {value.label}
+                    </option>
+                  ))}
+                </select>
+              </p>
             </>
           )}
         </div>
@@ -185,26 +238,3 @@ function Simulator() {
 }
 
 export default Simulator;
-
-// TODO mode change
-
-// const [mode, setMode] = useState(controls.mode.eyeMovement);
-
-// const handleModeChange = (e) => {
-//   setMode(e.target.value);
-// };
-
-/* <label className="label">
-                {controls.mode.title}
-                <select
-                  value={mode}
-                  onChange={handleModeChange}
-                  className="input"
-                >
-                  {Object.entries(controls.mode.options).map(([key, value]) => (
-                    <option key={key} value={key}>
-                      {value}
-                    </option>
-                  ))}
-                </select>
-              </label> */

@@ -22,6 +22,7 @@ $font-family:
   sans-serif;
 
 :root {
+  --bg: rgb(30, 30, 30);
   --dot-size: 50px;
   --font-color: rgb(255, 255, 255);
   --dot-color: rgb(255, 255, 255);
@@ -29,6 +30,7 @@ $font-family:
 }
 
 .Simulator {
+  --bg: rgb(30, 30, 30);
   --dot-size: 50px;
   --font-color: rgb(255, 255, 255);
   --dot-color: rgb(255, 255, 255);
@@ -39,6 +41,156 @@ $font-family:
 
   overflow: hidden;
 
+  background: var(--bg);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  position: relative;
+
+  .dot {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: var(--dot-size);
+    height: var(--dot-size);
+
+    will-change: left;
+
+    border-radius: 50%;
+    background: var(--dot-color);
+  }
+
+  .controls {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    margin: 20px;
+    margin-left: max(20px, env(safe-area-inset-left));
+    margin-top: max(20px, env(safe-area-inset-top));
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+
+    &__panel {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 20px;
+
+      min-height: 50px;
+
+      border: 1px solid var(--font-color);
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow:
+        0 0px 10px rgba(0, 0, 0, 0.1),
+        inset 0 0px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .label {
+    font-size: 16px;
+    color: var(--font-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .input {
+    width: 50px;
+    padding: 5px;
+    margin: 5px;
+    border: none;
+    background: var(--input-bg);
+    color: var(--font-color);
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+
+    font-family: $font-family;
+  }
+
+  select {
+    width: auto !important;
+    appearance: none;
+  }
+
+  .button {
+    min-width: 40px;
+    min-height: 40px;
+    height: 40px;
+    width: 40px;
+    max-width: 40px;
+    max-height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--input-bg);
+
+    color: var(--font-color);
+    font-family: $font-family;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 7px;
+
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: rgba(35, 156, 110, 0.2);
+    }
+  }
+
+  .collapse-btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+
+    svg {
+      fill: var(--font-color);
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .info-link {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+
+    color: var(--font-color);
+    font-family: $font-family;
+    font-size: 24px;
+
+    text-decoration: none;
+  }
+}
+
+.bg-animated {
   background: linear-gradient(
       270deg,
       rgb(28, 0, 64),
@@ -54,13 +206,6 @@ $font-family:
   background-size: 900% 900%;
 
   animation: bg-animation 40s ease-in-out infinite alternate;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-
-  position: relative;
 }
 
 @keyframes bg-animation {
@@ -70,143 +215,4 @@ $font-family:
   100% {
     background-position: 100% 50%;
   }
-}
-
-.dot {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-
-  width: var(--dot-size);
-  height: var(--dot-size);
-
-  will-change: left;
-
-  border-radius: 50%;
-  background: var(--dot-color);
-}
-
-.controls {
-  position: absolute;
-
-  left: 0;
-  top: 0;
-  margin: 20px;
-  margin-left: max(20px, env(safe-area-inset-left));
-  margin-top: max(20px, env(safe-area-inset-top));
-
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-
-  &__panel {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 20px;
-
-    min-height: 50px;
-
-    border: 1px solid var(--font-color);
-    padding: 10px 20px;
-    border-radius: 20px;
-    box-shadow:
-      0 0px 10px rgba(0, 0, 0, 0.1),
-      inset 0 0px 10px rgba(0, 0, 0, 0.1);
-  }
-}
-
-.label {
-  font-size: 16px;
-  color: var(--font-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin: 0;
-  padding: 0;
-}
-
-.input {
-  width: 50px;
-  padding: 5px;
-  margin: 5px;
-  border: none;
-  background: var(--input-bg);
-  color: var(--font-color);
-  border-radius: 4px;
-  font-size: 16px;
-  outline: none;
-
-  font-family: $font-family;
-}
-
-select {
-  width: auto !important;
-  appearance: none;
-}
-
-.button {
-  min-width: 40px;
-  min-height: 40px;
-  height: 40px;
-  width: 40px;
-  max-width: 40px;
-  max-height: 40px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  background-color: var(--input-bg);
-
-  color: var(--font-color);
-  font-family: $font-family;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 0 7px;
-
-  padding: 0;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  border-radius: 50%;
-
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: rgba(35, 156, 110, 0.2);
-  }
-}
-
-.collapse-btn {
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  width: 24px;
-  height: 24px;
-  padding: 0;
-
-  svg {
-    fill: var(--font-color);
-    width: 24px;
-    height: 24px;
-  }
-}
-
-.info-link {
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-
-  color: var(--font-color);
-  font-family: $font-family;
-  font-size: 24px;
-
-  text-decoration: none;
 }
