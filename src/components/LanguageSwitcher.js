@@ -1,5 +1,4 @@
 import React from "react";
-// import { useLanguage } from "./..Localization";
 import "./LanguageSwitcher.scss";
 import { useLanguage } from "../context/Localization";
 
@@ -16,7 +15,6 @@ const LanguageSwitcher = ({ className }) => {
       <option value="ru">Русский</option>
       <option value="uk">Українська</option>
       <option value="cs">Čeština</option>
-      {/* Czech option added for demonstration */}
     </select>
   );
 };
