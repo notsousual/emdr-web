@@ -3,6 +3,8 @@ import "./App.scss";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Simulator from "./pages/Simulator";
 import About from "./pages/About";
+import NotFoundPage from "./pages/NotFoundPage";
+
 function App() {
   const location = useLocation();
   useEffect(() => {
@@ -27,7 +29,7 @@ function App() {
 
         {/* <Route path="/contact" element={<ContactPage />} /> */}
         {/* If no route matches, the NotFoundPage component will be rendered. */}
-        {/* <Route path="*" element={<NotFoundPage />} /> */}
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
   );
