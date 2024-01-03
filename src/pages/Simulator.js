@@ -3,50 +3,17 @@ import "./Simulator.scss";
 import Tooltip from "./../components/Tooltip";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
-
-const controls = {
-  speed: {
-    title: "Speed: ",
-    units: "Hz",
-    tooltip:
-      "The frequency of eye movements in hertz (Hz) denotes the number of cycles (back and forth movements) per second. If eye movements are performed at a frequency of 1 Hz, it means there is one complete cycle per second.",
-  },
-  mode: {
-    title: "Mode:",
-    options: {
-      eyeMovement: "Eye movement",
-      bilateralTapping: "Bilateral tapping",
-    },
-  },
-
-  dotSize: "Dot size: ",
-
-  help: {
-    tooltip:
-      "Learn more about what this tool does and EMDR therapy by clicking on the question mark button!",
-  },
-
-  theme: {
-    label: "Theme: ",
-    themes: {
-      movingGradient: {
-        bg: "linear-gradient(270deg, rgb(28, 0, 64),rgb(77, 14, 149),rgb(39, 25, 111), rgb(11, 91, 60), rgb(39, 25, 111), rgb(77, 14, 149), rgb(28, 0, 64)), rgb(36, 0, 84)",
-        label: "Moving gradient",
-      },
-
-      blackAndWhite: {
-        bg: "rgb(30,30,30)",
-        label: "Black and white",
-      },
-      blue: {
-        bg: "#246bb4",
-        label: "Blue",
-      },
-    },
-  },
-};
+import LanguageSwitcher from "../components/LanguageSwitcher";
+import { useTranslate } from "../context/Localization";
 
 function Simulator() {
+  const translate = useTranslate(); // Initialize the translation function
+
+  // Access the controls object for the current language
+  const controls = translate("controls");
+
+  // ... (rest of your component logic)
+
   const initDotSize = 50;
   const [dotSize, setDotSize] = useState(initDotSize);
   const [inputValue, setInputValue] = useState(1);
@@ -54,7 +21,7 @@ function Simulator() {
   const animationRef = useRef(null);
 
   const [collapsed, setCollapsed] = useState(false);
-  const [themeKey, setThemeKey] = useState("movingGradient");
+  const [themeKey, setThemeKey] = useState("blackAndWhite");
   // Get the current theme object using the theme key
   const currentTheme = controls.theme.themes[themeKey];
 
@@ -211,18 +178,25 @@ function Simulator() {
 
               <p className="label">
                 {controls.theme.label}
-                <select
-                  value={themeKey}
-                  onChange={handleThemeChange}
-                  className="input"
-                >
-                  {Object.entries(controls.theme.themes).map(([key, value]) => (
-                    <option key={key} value={key}>
-                      {value.label}
-                    </option>
-                  ))}
-                </select>
+
+                <span>
+                  <select
+                    value={themeKey}
+                    onChange={handleThemeChange}
+                    className="input"
+                  >
+                    {Object.entries(controls.theme.themes).map(
+                      ([key, value]) => (
+                        <option key={key} value={key}>
+                          {value.label}
+                        </option>
+                      )
+                    )}
+                  </select>
+                </span>
               </p>
+
+              <LanguageSwitcher className="input" />
             </>
           )}
         </div>

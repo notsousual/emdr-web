@@ -4,6 +4,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Simulator from "./pages/Simulator";
 import About from "./pages/About";
 import NotFoundPage from "./pages/NotFoundPage";
+import { LanguageProvider } from "./context/Localization";
 
 function App() {
   const location = useLocation();
@@ -23,14 +24,16 @@ function App() {
   }, [location]); // Re-run the effect when the location changes
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Simulator />} />
-        <Route path="/about" element={<About />} />
+      <LanguageProvider>
+        <Routes>
+          <Route path="/" element={<Simulator />} />
+          <Route path="/about" element={<About />} />
 
-        {/* <Route path="/contact" element={<ContactPage />} /> */}
-        {/* If no route matches, the NotFoundPage component will be rendered. */}
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+          {/* <Route path="/contact" element={<ContactPage />} /> */}
+          {/* If no route matches, the NotFoundPage component will be rendered. */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </LanguageProvider>
     </>
   );
 }

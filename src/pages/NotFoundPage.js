@@ -1,10 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import SectionLink from "../components/SectionLink"; // Update with the actual import path
 import "./NotFoundPage.scss";
-const NotFoundPage = () => {
-  const navigate = useNavigate();
 
+const NotFoundPage = () => {
   return (
     <div className="NotFoundPage">
       <h1 className="title">
