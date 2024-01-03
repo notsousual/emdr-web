@@ -15,7 +15,7 @@ const LanguageSwitcher = ({ className }) => {
       <option value="en">English</option>
       <option value="ru">Русский</option>
       <option value="uk">Українська</option>
-      <option value="cz">Čeština</option>
+      <option value="cs">Čeština</option>
       {/* Czech option added for demonstration */}
     </select>
   );

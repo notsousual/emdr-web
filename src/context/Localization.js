@@ -136,7 +136,7 @@ const resources = {
 
   // ...other translations...
 
-  cz: {
+  cs: {
     // Czech translations
     controls: {
       speed: {
