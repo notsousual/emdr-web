@@ -29,7 +29,8 @@ function About() {
     //scroll animation for eyes
     const handleScroll = () => {
       const newScroll =
-        window.scrollY / (document.body.offsetHeight - window.innerHeight);
+        (window.scrollY * 4) /
+        (document.body.offsetHeight - window.innerHeight);
       setScroll(newScroll);
     };
 

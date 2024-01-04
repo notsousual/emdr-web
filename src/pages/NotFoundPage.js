@@ -17,7 +17,7 @@ const NotFoundPage = () => {
 
         <span>or try the </span>
         <span className="subtitle-link">
-          <SectionLink to={"/about"} variation="hyperlink">
+          <SectionLink to={"/"} variation="hyperlink">
             EMDR simulator
           </SectionLink>
         </span>
