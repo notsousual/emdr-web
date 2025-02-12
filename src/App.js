@@ -8,7 +8,6 @@ import { LanguageProvider } from "./context/Localization";
 function App() {
   const location = useLocation();
   useEffect(() => {
-    // Check if the current route is '/about'
     if (location.pathname === "/about") {
       // Change the overflow on body to 'auto' when on the About page
       document.body.style.overflow = "auto";
@@ -20,7 +19,7 @@ function App() {
     return () => {
       document.body.style.overflow = "hidden";
     };
-  }, [location]); // Re-run the effect when the location changes
+  }, [location]);
   return (
     <>
       <LanguageProvider>
@@ -28,8 +27,6 @@ function App() {
           <Route path="/" element={<Simulator />} />
           <Route path="/about" element={<About />} />
 
-          {/* <Route path="/contact" element={<ContactPage />} /> */}
-          {/* If no route matches, the NotFoundPage component will be rendered. */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </LanguageProvider>
