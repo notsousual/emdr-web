@@ -12,8 +12,6 @@ function Simulator() {
   // Access the controls object for the current language
   const controls = translate("controls");
 
-  // ... (rest of your component logic)
-
   const initDotSize = 50;
   const [dotSize, setDotSize] = useState(initDotSize);
   const [inputValue, setInputValue] = useState(1);

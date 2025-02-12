@@ -1,5 +1,5 @@
 import React from "react";
-import SectionLink from "../components/SectionLink"; // Update with the actual import path
+import SectionLink from "../components/SectionLink";
 import "./NotFoundPage.scss";
 
 const NotFoundPage = () => {

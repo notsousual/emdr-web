@@ -1,7 +1,6 @@
 import React, { createContext, useState, useContext } from "react";
 
 // Localization resources
-
 const bg = {
   movingGradient:
     "linear-gradient(270deg, rgb(28, 0, 64),rgb(77, 14, 149),rgb(39, 25, 111), rgb(11, 91, 60), rgb(39, 25, 111), rgb(77, 14, 149), rgb(28, 0, 64)), rgb(36, 0, 84)",
@@ -50,7 +49,6 @@ const resources = {
         },
       },
     },
-    // ...other translations
   },
   ru: {
     // Russian translations
@@ -91,7 +89,6 @@ const resources = {
         },
       },
     },
-    // ...other translations...
   },
   uk: {
     // Ukrainian translations
@@ -134,8 +131,6 @@ const resources = {
     },
   },
 
-  // ...other translations...
-
   cs: {
     // Czech translations
     controls: {
@@ -175,7 +170,6 @@ const resources = {
         },
       },
     },
-    // ...other translations...
   },
 };
 

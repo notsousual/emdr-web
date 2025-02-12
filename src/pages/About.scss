@@ -170,8 +170,7 @@
 
   .disclaimer {
     padding: 20px 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.5); /* Change the color and width as needed */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5); /* Change the color and width as needed */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 
     background: linear-gradient(
       270deg,
@@ -319,10 +318,10 @@
 
 @keyframes fadeIn {
   0% {
-    opacity: 0; /* Start with 0 opacity */
+    opacity: 0;
   }
 
   100% {
-    opacity: 1; /* Gradually fade in to full opacity at 100% */
+    opacity: 1;
   }
 }

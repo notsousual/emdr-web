@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import "./App.scss";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Simulator from "./pages/Simulator";
 import About from "./pages/About";
