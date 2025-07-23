@@ -33,7 +33,7 @@ function Simulator() {
         }
       );
     }
-  }, []);
+  }, [dotSize]);
 
   const handleDotSizeChange = (amount) => {
     setDotSize((prevSize) => {
